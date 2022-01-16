@@ -1,0 +1,10 @@
+{
+    "mimeTypes": {
+        ".htm": "text/plain",
+        ".html": "text/plain",
+        ".json": "text/json",
+        ".md": "text/markdown",
+        ".psm1": "text/plain",
+        ".ps1": "text/plain"
+    }
+}
