@@ -13,7 +13,7 @@ elseif ($env:UserName -ne 'defaultuser0')
 }
 else
 {
-    if (Get-ExecutionPolicy -ne 'RemoteSigned')
+    if ((Get-ExecutionPolicy) -ne 'RemoteSigned')
     {
         Write-Verbose -Verbose 'Set PowerShell ExecutionPolicy to RemoteSigned'
         Set-ExecutionPolicy RemoteSigned -Force
