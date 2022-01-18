@@ -1,4 +1,4 @@
-'PSCloudScript for AutopilotOOBE'
+'PSCloudScript for AutopilotOOBE Requirements'
 'iex (irm autopilotoobe.pscloudscript.com)'
 
 if ($env:SystemDrive -eq 'X:')
@@ -20,25 +20,25 @@ else
     }
     if (-not (Get-PackageProvider | Where-Object {$_.Name -eq 'NuGet'}))
     {
-        Write-Verbose -Verbose 'Installing PackageProvider NuGet'
+        Write-Verbose -Verbose 'Install PackageProvider NuGet'
         Install-PackageProvider -Name NuGet -Force
     }
 
     if ((Get-Module PowerShellGet).version -lt [System.Version]'2.2.5.0')
     {
-        Write-Verbose -Verbose 'Installing PowerShell Module PowerShellGet'
+        Write-Verbose -Verbose 'Install PowerShell Module PowerShellGet'
         Install-Module PowerShellGet -Force
     }
     if ((Get-Module PackageManagement).version -lt [System.Version]'1.4.7.0')
     {
-        Write-Verbose -Verbose 'Installing PowerShell Module PackageManagement'
+        Write-Verbose -Verbose 'Install PowerShell Module PackageManagement'
         Install-Module PackageManagement -Force
     }
-    Write-Verbose -Verbose 'Installing PowerShell Module AutopilotOOBE'
+    Write-Verbose -Verbose 'Install PowerShell Module AutopilotOOBE'
     Install-Module AutopilotOOBE -Force
 
     
-    Write-Verbose -Verbose 'Installing PowerShell Script Get-WindowsAutoPilotInfo'
+    Write-Verbose -Verbose 'Install PowerShell Script Get-WindowsAutoPilotInfo'
     Install-Script -Name Get-WindowsAutoPilotInfo -Force
 
     Write-Verbose 'Run AutopilotOOBE in the new PowerShell window' -Verbose
